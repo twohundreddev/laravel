@@ -6,13 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->id();
+            $table->ulid('id')->primary();
             $table->string('queue')->index();
             $table->longText('payload');
             $table->unsignedTinyInteger('attempts');
@@ -22,7 +19,7 @@ return new class extends Migration
         });
 
         Schema::create('job_batches', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->ulid('id')->primary();
             $table->string('name');
             $table->integer('total_jobs');
             $table->integer('pending_jobs');
@@ -35,7 +32,7 @@ return new class extends Migration
         });
 
         Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
+            $table->ulid('id')->primary();
             $table->string('uuid')->unique();
             $table->text('connection');
             $table->text('queue');
@@ -43,15 +40,5 @@ return new class extends Migration
             $table->longText('exception');
             $table->timestamp('failed_at')->useCurrent();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('jobs');
-        Schema::dropIfExists('job_batches');
-        Schema::dropIfExists('failed_jobs');
     }
 };
