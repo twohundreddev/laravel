@@ -62,14 +62,14 @@
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
         ],
         "pint": "pint",
-        "refactor": "rector",
+        "rector": "rector",
         "test:pint": "pint --test",
-        "test:refactor": "rector --dry-run",
+        "test:rector": "rector --dry-run",
         "test:arch": "pest --filter=arch",
         "test:unit": "pest --parallel",
         "test": [
             "@test:pint",
-            "@test:refactor",
+            "@test:rector",
             "@test:unit"
         ]
     },
