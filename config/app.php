@@ -123,4 +123,14 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Model Configuration
+    |--------------------------------------------------------------------------
+    | This configuration is to determine if the models should be strict.
+    |
+    */
+    'models' => [
+        'strict' => env('APP_MODELS_STRICT', true),
+    ],
 ];
