@@ -20,13 +20,6 @@ expect()
 
 expect()
     ->extend(
-        'toHaveTraits',
-        fn (array $traits) => expect(array_keys(class_uses($this->value)))
-            ->toBe($traits)
-    );
-
-expect()
-    ->extend(
         'toHaveFillableAttributes',
         fn (array $fillable) => expect((new $this->value)->getFillable())
             ->toBe($fillable)
