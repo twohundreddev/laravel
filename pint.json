@@ -1,0 +1,21 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "concat_space": false,
+        "phpdoc_summary": false,
+        "phpdoc_align": false,
+        "no_superfluous_phpdoc_tags": false,
+        "class_definition": {
+            "multi_line_extends_each_single_line": false
+        },
+        "class_attributes_separation": {
+            "elements": {
+                "property": "one",
+                "const": "none"
+            }
+        }
+    },
+    "exclude": [
+        "public"
+    ]
+}
