@@ -11,6 +11,7 @@
     "require": {
         "php": "^8.4",
         "laravel/framework": "^11.36.1",
+        "laravel/horizon": "^5.30",
         "laravel/jetstream": "^5.3.4",
         "laravel/sanctum": "^4.0.7",
         "laravel/tinker": "^2.10",
